@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './screens/fillter_screen.dart';
 import './screens/tabs_screen.dart';
 import './screens/meal_detail.dart';
 import './screens/category_detail.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const TabsScreen(),
         CategoryDetail.routeName: (context) => const CategoryDetail(),
-        MealDetail.routeName: ((context) => const MealDetail())
+        MealDetail.routeName: ((context) => const MealDetail()),
+        FillterScreen.routeName: (context) => const FillterScreen()
       },
 
       // Điều hướng
