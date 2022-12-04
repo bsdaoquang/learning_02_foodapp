@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learning_02_foodapp/screens/category_detail.dart';
+import './screens/meal_detail.dart';
+import './screens/category_detail.dart';
 import './screens/categories.dart';
 
 void main() {
@@ -18,8 +19,24 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Nunito',
       ),
       title: 'Food App',
-      home: const CategoriesScreen(),
-      routes: {'/category-detail': (context) => CategoryDetail()},
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const CategoriesScreen(),
+        CategoryDetail.routeName: (context) => const CategoryDetail(),
+        MealDetail.routeName: ((context) => const MealDetail())
+      },
+
+      // Điều hướng
+      // onGenerateRoute: (settings) {
+      //   return MaterialPageRoute(
+      //       builder: (context) => const CategoriesScreen());
+      // },
+
+      // Trường hợp nếu route không tồn tại sẽ chuyển đến trang chủ
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+            builder: (context) => const CategoriesScreen());
+      },
     );
   }
 }

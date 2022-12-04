@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/category_detail.dart';
-import '../widgets/title.dart';
+import 'title_widget.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
@@ -10,8 +10,8 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem(this.id, this.title, this.color, {super.key});
 
   void _selectedCategory(BuildContext context) {
-    Navigator.of(context)
-        .pushNamed('/category-detail', arguments: {'id': id, 'title': title});
+    Navigator.of(context).pushNamed(CategoryDetail.routeName,
+        arguments: {'id': id, 'title': title});
   }
 
   @override
