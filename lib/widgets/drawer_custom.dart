@@ -26,7 +26,7 @@ class DrawerCustom extends StatelessWidget {
             Navigator.of(context).pushNamed('/');
           }),
           ListTileWidget('Fillter', Icons.settings, () {
-            Navigator.of(context).pushNamed(FillterScreen.routeName);
+            Navigator.of(context).pushReplacementNamed(FillterScreen.routeName);
           }),
         ],
       ),
